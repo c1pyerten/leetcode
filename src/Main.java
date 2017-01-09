@@ -17,6 +17,8 @@ public class Main {
         System.out.println(Arrays.equals(ss1, ss2));
 
         System.out.println(new HammingDistance461().solution(7, 1));
+        System.out.println(new FizzBuzz412().solution(15));
+        System.out.println(new ReverseString344().solution("zcnmzxbcmzbczm"));
 
     }
 
