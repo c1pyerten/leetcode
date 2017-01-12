@@ -30,10 +30,6 @@ public class Main {
         list.sort(Employee.getComparator());
         Employee.printList(list);
 
-
-
-
-
     }
 
     public List<String> solution(int n) {
