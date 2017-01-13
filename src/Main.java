@@ -29,7 +29,6 @@ public class Main {
         System.out.println("-------------------");
         list.sort(Employee.getComparator());
         Employee.printList(list);
-
     }
 
     public List<String> solution(int n) {
