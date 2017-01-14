@@ -16,19 +16,9 @@ public class Main {
         System.out.println(new HammingDistance461().solution(7, 1));
         System.out.println(new FizzBuzz412().solution(15));
         System.out.println(new ReverseString344().solution("zcnmzxbcmzbczm"));
-        System.out.println(new FindDisappearedNumbers448().solution(null));
 
         System.out.println();
-        List<Employee> list = Employee.generateEmployees();
-        Employee.printList(list);
-        System.out.println("-------------------");
 
-        Collections.sort(list);
-        Employee.printList(list);
-
-        System.out.println("-------------------");
-        list.sort(Employee.getComparator());
-        Employee.printList(list);
     }
 
     public List<String> solution(int n) {
