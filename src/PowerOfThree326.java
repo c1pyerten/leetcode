@@ -6,7 +6,7 @@
 
 public class PowerOfThree326 {
     public boolean solution1(int n) {
-        return n > 0 && (n == 1 || (n % 3) == 0 && solution1(n / 3));
+        return n > 0 && (n == 1 || (n % 3 == 0 && solution1(n / 3)));
     }
 
 
@@ -14,6 +14,6 @@ public class PowerOfThree326 {
         if (n == 0) return false;
 
         int maxPow3 = (int)Math.pow(3, 19);
-        return maxPow3 % 3 == 0;
+        return maxPow3 % n == 0;
     }
 }

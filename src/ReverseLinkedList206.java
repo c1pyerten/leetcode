@@ -9,24 +9,7 @@ public class ReverseLinkedList206 {
         }
     }
 
-//    public ListNode solution(ListNode head) {
-//        if (head == null || head.next == null) return head;
-//
-//        ListNode prev = head;
-//        ListNode next = null;
-//        prev.next = null;
-//        head = head.next;
-//
-//        while (head.next != null) {
-//            next = head.next;
-//            head.next = prev;
-//            prev = head;
-//            head = next;
-//        }
-//        head.next = prev;
-//        return head;
-//    }
-
+    // iterative
     public ListNode solution(ListNode head) {
         ListNode prevHead = null;
         ListNode next = null;
@@ -37,5 +20,16 @@ public class ReverseLinkedList206 {
             head = next;
         }
         return prevHead;
+    }
+
+    // recursive
+    public ListNode solution2(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        ListNode next = head.next;
+        head.next = null;
+        ListNode newHead = solution2(next);
+        next.next = head;
+        return newHead;
     }
 }
