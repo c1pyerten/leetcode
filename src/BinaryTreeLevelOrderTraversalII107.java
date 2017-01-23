@@ -58,11 +58,11 @@ public class BinaryTreeLevelOrderTraversalII107 {
     private void dfs(List<List<Integer>> answer, TreeNode cur, int level) {
         if (cur == null) return;
         if (answer.size() == level) {
-            answer.add(new ArrayList<>());
+            answer.add(0, new ArrayList<>());
         }
 
         dfs(answer, cur.left, level + 1);
         dfs(answer, cur.right, level + 1);
-        answer.get(answer.size() - level + 1).add(cur.val);
+        answer.get(answer.size() - level - 1).add(cur.val);
     }
 }

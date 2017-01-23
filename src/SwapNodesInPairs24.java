@@ -17,6 +17,14 @@ public class SwapNodesInPairs24 {
 
     public ListNode solution(ListNode head) {
         if (head.next == null || head == null) return head;
+        ListNode nextNode = head.next;
+        head.next = solution(head.next.next);
+        nextNode.next = head;
+        return nextNode;
+    }
 
+    public ListNode solution2(ListNode head2) {
+        // TODO: 2017/1/24
+        return null;
     }
 }
