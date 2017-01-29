@@ -9,7 +9,7 @@
 
 public class MoveZeroes283 {
     public void solution(int[] nums) {
-        if (nums.length < 2 || nums == null) return;
+        if (nums.length < 2) return;
 
         int idx = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -20,7 +20,7 @@ public class MoveZeroes283 {
         while (idx < nums.length) {
             nums[idx++] = 0;
         }
-
     }
+
 }
 

@@ -5,7 +5,7 @@
 //        Given a list of non-negative integers representing the amount of money of each house,
 //        determine the maximum amount of money you can rob tonight without alerting the police.
 
-
+// TODO finish this DP question
 public class HouseRobber198 {
     public int solution(int[] nums) {
         int a = 0;
