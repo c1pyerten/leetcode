@@ -14,11 +14,12 @@ public class ArrangingCoins441 {
             if ((mid + 1) * mid / 2 <= n) left = mid + 1;
             else right = mid - 1;
         }
-        return left -1;
+        return left - 1;
     }
 
     public int solution2(int n) {
-        return (int)(Math.sqrt(1 + 8*(long)n) - 1) / 2;
+        return (int) (Math.sqrt(1 + 8 * (long) n) - 1) / 2;
     }
-
 }
+
+

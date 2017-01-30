@@ -10,17 +10,13 @@ public class LinkedListCycle141 {
         }
     }
     public boolean solution(ListNode head) {
-        return true;
-    }
-
-    public static void main(String[] args) {
-        int k = 0;
-        int count = 0;
-        while (k <= 8) {
-            System.out.println(count);
-            count++;
-            k = k + count;
+        if (head == null) return false;
+        ListNode head2 = head;
+        while (head2.next != null && head2.next.next != null) {
+            head = head.next;
+            head2 = head2.next.next;
+            if (head2 == head) return true;
         }
-
+        return false;
     }
 }
