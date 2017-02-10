@@ -38,7 +38,7 @@ public class LongestPalindrome409 {
 
         for (char c : s.toCharArray()) {
             if (c >= 'a') lowerTable[c - 'a']++;
-            else upperTable[c-'A']++;
+            else upperTable[c - 'A']++;
         }
         for (int i = 0; i < 26; i++) {
             answer += (lowerTable[i] / 2) * 2;
