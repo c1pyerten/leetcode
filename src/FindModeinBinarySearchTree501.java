@@ -17,25 +17,53 @@
 //        Note: If a tree has more than one mode, you can return them in any order.
 
 
-// TODO
-//public class FindModeinBinarySearchTree501 {
-//    class TreeNode {
-//        int val;
-//        TreeNode left;
-//        TreeNode right;
-//        TreeNode(int x) {
-//            val = x;
-//        }
-//    }
-//
-//    public int[] solution(TreeNode root) {
-//
-//    }
-//
-//    private int helper(TreeNode cur) {
-//        if (cur == null) return 0;
-//        if (cur.left == null && cur.right == null) return 1;
-//        if (cur.left == null && cur.val == cur.right.val) return 1 + helper(cur.right);
-//        if (cur.right == null && cur.val == cur.left.val) return 1 + helper(cur.left);
-//    }
-//}
+public class FindModeinBinarySearchTree501 {
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) {
+            val = x;
+        }
+    }
+
+    // solution2
+    private int modeCount;
+    private int maxCount;
+    private int curValue;
+    private int curCount;
+    private int[] modes;
+
+    public int[] findMode2(TreeNode root) {
+        inorder(root);
+        modes = new int[modeCount];
+        modeCount = 0;
+        curCount = 0;
+        inorder(root);
+        return modes;
+    }
+
+    private void inorder(TreeNode cur) {
+        if (cur == null) return;
+        inorder(cur.left);
+        handlerValue(cur.val);
+        inorder(cur.right);
+    }
+
+    private void handlerValue(int value) {
+        if (curValue != value) {
+            curValue = value;
+            curCount = 0;
+        }
+        curCount++;
+        if (curCount > maxCount) {
+            maxCount = curCount;
+            modeCount = 1;
+        } else if (curCount == maxCount) {
+            if (modes != null) {
+                modes[modeCount] = curValue;
+            }
+            modeCount++;
+        }
+    }
+}

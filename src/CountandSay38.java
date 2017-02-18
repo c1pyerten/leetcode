@@ -7,17 +7,22 @@
 //        Given an integer n, generate the nth sequence.
 
 
-import java.util.function.Function;
-
-//public class CountandSay38 {
-//    public String solution(int n) {
-//        int last = 1;
-//
-//        while (n > 0) {
-//            String tmp = new Integer(last).toString();
-//            for (int i = 0; i < tmp.length(); i++) {
-//
-//            }
-//        }
-//    }
-//}
+public class CountandSay38 {
+    public String countAndSay(int n) {
+        if (n == 0) return "";
+        String prevStr = "1";
+        while (--n > 0) {
+            String cur = "";
+            for (int i = 0; i < prevStr.length(); i++) {
+                int count = 1;
+                while (i + 1 < prevStr.length() && prevStr.charAt(i + 1) == prevStr.charAt(i)) {
+                    count++;
+                    i++;
+                }
+                cur += String.valueOf(count) + String.valueOf(prevStr.charAt(i));
+            }
+            prevStr = cur;
+        }
+        return prevStr;
+    }
+}
